@@ -7,9 +7,9 @@
   <style>
     /* Base */
     :root{
-      --ink:#222;           /* headline ink */
-      --murmur:#444;        /* main whisper */
-      --hush:#666;          /* footer whisper */
+      --ink:#222;
+      --murmur:#444;
+      --hush:#666;
       --bg:#fff;
       --accent:#111;
     }
@@ -25,16 +25,16 @@
     .wrap{
       min-height:100%;
       display:flex;
-      align-items:flex-start;         /* keep it high + austere */
+      align-items:flex-start;
       justify-content:center;
       padding:10vh 6vw 18vh;
     }
     .page{
-      max-width: 42rem;               /* ~672px */
+      max-width: 42rem;
       text-align:center;
     }
 
-    /* Type scale (whisper preserved via lighter greys) */
+    /* Type scale */
     h1{
       margin:0 0 2rem 0;
       font-weight:700;
@@ -51,28 +51,35 @@
     }
     .tag{
       margin:0 0 2.5rem 0;
-      font-weight:700;                 /* one bold strike */
+      font-weight:700;
       color:var(--ink);
       font-size:clamp(16px, 3.5vw, 20px);
     }
 
-    /* Button: big tap target, still minimal */
+    /* Tome button: roughened press stamp */
     .btn{
       display:inline-block;
-      padding:0.95rem 1.25rem;
-      min-height:44px;                 /* thumb-friendly */
-      border:1px solid #bbb;
-      border-radius:6px;
-      background:#f7f7f7;
+      margin-top:2em;
+      padding:0.9em 2em;
+      border:2px solid #000;
+      border-radius:4px;
+      background:#f9f9f9;
       color:var(--accent);
+      font-family:"Georgia","Garamond",serif;
+      font-size:1.1em;
+      font-weight:bold;
+      letter-spacing:0.5px;
       text-decoration:none;
-      font-weight:600;
-      font-size:clamp(15px, 3.6vw, 18px);
-      line-height:1;
-      transition:transform .06s ease, background .2s ease, border-color .2s ease;
+      box-shadow:2px 2px 0 #000;
+      transform:translate(-1px,-1px);
+      transition:all 0.15s ease;
     }
-    .btn:active{ transform:translateY(1px); }
-    .btn:hover{ background:#f0f0f0; border-color:#999; }
+    .btn:hover{
+      background:#000;
+      color:#fff;
+      box-shadow:3px 3px 0 #444;
+      transform:translate(0,0);
+    }
 
     /* Footer whisper */
     .foot{
@@ -83,12 +90,9 @@
       font-size:clamp(14px, 3.3vw, 17px);
     }
 
-    /* Ultra-small phones: add a hair more breathing room */
     @media (max-width:360px){
       .wrap{ padding-top:12vh; }
     }
-
-    /* Respect users who prefer less motion */
     @media (prefers-reduced-motion:reduce){
       .btn{ transition:none; }
     }
@@ -101,12 +105,17 @@
       <p class="sub">Mister Mann remembers what you tried to forget.</p>
       <p class="tag">The joke never dies.</p>
 
-      <a class="btn" href="MisterMann.pdf" target="_blank">Read Free PDF</a>
+      <!-- Tome button -->
+      <a class="btn" href="MisterMann.pdf" target="_blank">Open the Tome</a>
 
-      <p class="foot">Leave when you’ve laughed. Return when you’ve remembered.</p>
+      <p class="foot">
+        Leave when you’ve laughed. Return when you’ve remembered.<br/>
+        The tome stays shut only for those who fear its joke.
+      </p>
     </section>
   </main>
 </body>
 </html>
+
 
 
