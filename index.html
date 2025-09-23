@@ -1,39 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <title>MISTER MANN</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mister Mann</title>
   <style>
-    body {
-      background: #fff;
-      font-family: serif;
-      color: #000;
-      text-align: center;
-      margin-top: 15%;
+    /* Base */
+    :root{
+      --ink:#222;           /* headline ink */
+      --murmur:#444;        /* main whisper */
+      --hush:#666;          /* footer whisper */
+      --bg:#fff;
+      --accent:#111;
     }
-    h1 { font-size: 3em; margin-bottom: 0.5em; }
-    h2 { font-size: 1.5em; font-weight: normal; }
-    h3 { font-size: 1.2em; font-weight: normal; color: #444; }
-    a.download {
-      display: inline-block;
-      margin-top: 2em;
-      padding: 1em 2em;
-      border: 2px solid #000;
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+    }
+
+    /* Layout */
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:flex-start;         /* keep it high + austere */
+      justify-content:center;
+      padding:10vh 6vw 18vh;
+    }
+    .page{
+      max-width: 42rem;               /* ~672px */
+      text-align:center;
+    }
+
+    /* Type scale (whisper preserved via lighter greys) */
+    h1{
+      margin:0 0 2rem 0;
+      font-weight:700;
+      letter-spacing:0.02em;
+      font-size:clamp(32px, 6vw, 64px);
+      color:var(--ink);
+    }
+    .sub{
+      margin:0 0 0.75rem 0;
+      font-weight:300;
+      line-height:1.45;
+      color:var(--murmur);
+      font-size:clamp(16px, 3.7vw, 22px);
+    }
+    .tag{
+      margin:0 0 2.5rem 0;
+      font-weight:700;                 /* one bold strike */
+      color:var(--ink);
+      font-size:clamp(16px, 3.5vw, 20px);
+    }
+
+    /* Button: big tap target, still minimal */
+    .btn{
+      display:inline-block;
+      padding:0.95rem 1.25rem;
+      min-height:44px;                 /* thumb-friendly */
+      border:1px solid #bbb;
+      border-radius:6px;
+      background:#f7f7f7;
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+      font-size:clamp(15px, 3.6vw, 18px);
+      line-height:1;
+      transition:transform .06s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:active{ transform:translateY(1px); }
+    .btn:hover{ background:#f0f0f0; border-color:#999; }
+
+    /* Footer whisper */
+    .foot{
+      margin-top:2rem;
+      color:var(--hush);
+      font-weight:300;
+      line-height:1.5;
+      font-size:clamp(14px, 3.3vw, 17px);
+    }
+
+    /* Ultra-small phones: add a hair more breathing room */
+    @media (max-width:360px){
+      .wrap{ padding-top:12vh; }
+    }
+
+    /* Respect users who prefer less motion */
+    @media (prefers-reduced-motion:reduce){
+      .btn{ transition:none; }
     }
   </style>
 </head>
 <body>
-  <h1>MISTER MANN</h1>
-  <h2>Mister Mann remembers what you tried to forget.</h2>
-  <h3>The joke never dies.</h3>
-  <a class="download" href="MisterMann.pdf">Download Free PDF</a>
-  <p style="margin-top:3em;font-size:0.9em;color:#666;">
-    Leave when you’ve laughed. Return when you’ve remembered.
-  </p>
+  <main class="wrap">
+    <section class="page">
+      <h1>MISTER MANN</h1>
+      <p class="sub">Mister Mann remembers what you tried to forget.</p>
+      <p class="tag">The joke never dies.</p>
+
+      <a class="btn" href="/Mister-Mann.pdf" download>Download Free PDF</a>
+
+      <p class="foot">Leave when you’ve laughed. Return when you’ve remembered.</p>
+    </section>
+  </main>
 </body>
 </html>
-
